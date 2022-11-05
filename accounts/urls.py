@@ -3,7 +3,9 @@ from . import views
 
 
 urlpatterns = [
+    path('register/',views.registerPage, name='register'),
     path('customer_register/', views.customerRegisterView, name="customer_register" ),
+    path('merchant_register/', views.merchantRegisterView, name="merchant_register" ),
     #path('register_auth/', views.customerRegisterAuth, name="register_auth" ),
 
     path('login/',views.loginView, name='login'),

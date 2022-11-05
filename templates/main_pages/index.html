@@ -1,13 +1,24 @@
 {% extends 'main_pages/base.html' %}
 {% block content %}
-<h1>Welcome</h1>
+{% include 'main_pages/navbar.html' %}
+<!-- ======= hero ======= -->
+<section id="hero" class="d-flex align-items-center">
 
-{% if user.is_authenticated%}
-<a href="{% url 'logout' %}">Logout</a> <br>
-{% else %}
-    <a href="{% url 'customer_register' %}">Register</a> <br>
-    <a href="{% url 'logout' %}">Logout</a> <br>
-    <a href="{% url 'login' %}">Login</a> 
-{% endif %}
+    <div class="container">
+      <div class="row justify-content-center pt-5 text-uppercase">
+          <div class="col-xl-5 col-lg-6 pt-5   justify-content-center">
+            <h1 class="pt-5">Imediately book <br> hairstylists <br>close by</h1>  
+                <form class="d-flex pt-4" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Discover hairstylists near me" aria-label="Search">
+                  <button class="btn btn-outline-info btn-lg" type="submit">Search</button>
+                </form>
+          </div>
+          <div class="col-md-6 pt-5">
+            <img src="static/hero_images/hero-img.png" alt="">
+          </div>
+      </div>
+    </div>
+
+  </section><!-- /hero -->
 
 {% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'main_pages/base.html' %}
+
+{% block content %}
+<br><br>
+<div class="container">
+    <h1>Register</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="id_first_name" class="form-label">First name:</label>
+            <input type="text" class="form-control" name="first_name" maxlength="150" id="id_first_name">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_last_name" class="form-label">Last name:</label>
+            <input type="text" class="form-control" name="last_name" maxlength="150" id="id_last_name">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_email" class="form-label">Email address:</label>
+            <input type="email" class="form-control" name="email" maxlength="254" autofocus required id="id_email">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Username:</label>
+            <input type="text" class="form-control" name="username" maxlength="150" required id="id_username">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password1" class="form-label">Password:</label>
+            <input type="password" class="form-control" name="password1" autocomplete="new-password1" required
+                id="id_password1">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password2" class="form-label">Password confirmation:</label>
+            <input type="password" name="password2" class="form-control" autocomplete="new-password2" required
+                id="id_password2">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+ 
+    {% for message in messages %}
+    <ul>
+      <li class="error_msg">{{message}}</li>
+    </ul>
+    {% endfor %}
+
+    {% endblock content %}
